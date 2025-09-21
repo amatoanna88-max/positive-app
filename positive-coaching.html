@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive Coaching - Programma di Affiliazione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Chosen Palette: Elegant Aura (Warm Off-White: #FFFBF5, Dark Sapphire-Blue: #1a2551, Brilliant Tiffany Green: #5ecaa1) -->
+    <!-- Application Structure Plan: A single-page app with a sticky top navigation for smooth scrolling. The structure is thematic, guiding the user from introduction (Hero) to the core proposition (Programma), benefits (Vantaggi), requirements (Cosa Chiediamo), motivation (Perché), and practical steps (Come Iniziare & Idee per Contenuti). This is better than a linear document as it allows non-linear exploration and highlights key sections like 'Vantaggi' and 'Idee' interactively, making the offer more tangible and appealing. -->
+    <!-- Visualization & Content Choices: Report Info: Program benefits -> Goal: Inform & Persuade -> Viz: Icon-driven cards -> Interaction: Hover effects -> Justification: Quickly communicates value points visually. | Report Info: Process to join -> Goal: Simplify -> Viz: Numbered step-by-step list with icons -> Interaction: Static visual flow -> Justification: Makes the onboarding process look simple and clear. | Report Info: Need for content creation -> Goal: Support & Inspire -> Viz: Interactive tabbed section -> Interaction: User clicks a tab to reveal specific content ideas -> Justification: Adds significant value, shows the affiliate will be supported, and makes the press kit a useful tool, not just an info dump. (Library/Method: Vanilla JS for dynamic content visibility). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a2551;
+            background-color: #1a2551;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .text-accent { color: #5ecaa1; }
+        .bg-accent { background-color: #5ecaa1; }
+        .bg-dark { background-color: #1a2551; }
+        .border-accent { border-color: #5ecaa1; }
+        .nav-link.active {
+            color: #5ecaa1;
+            font-weight: 600;
+        }
+        .idea-btn.active {
+            background-color: #1a2551;
+            color: #5ecaa1;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(26, 37, 81, 0.1), 0 4px 6px -2px rgba(26, 37, 81, 0.05);
+        }
+        #hero {
+            background-image: url('https://images.unsplash.com/photo-1549576495-364273292437?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 37, 81, 0.85);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-dark text-white p-4 sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#FFFBF5]">Positive Coaching</a>
+            <div class="hidden md:flex items-center space-x-4 text-xs lg:text-sm">
+                <a href="#programma" class="nav-link hover:text-accent transition-colors duration-300 whitespace-nowrap">Il Programma</a>
+                <a href="#vantaggi" class="nav-link hover:text-accent transition-colors duration-300">Vantaggi</a>
+                <a href="#requisiti" class="nav-link hover:text-accent transition-colors duration-300">Requisiti</a>
+                <a href="#idee" class="nav-link hover:text-accent transition-colors duration-300 whitespace-nowrap">Idee Contenuti</a>
+                <a href="#contatti" class="nav-link hover:text-accent transition-colors duration-300">Contatti</a>
+                <a href="#candidatura" class="ml-4 bg-accent text-dark text-xs font-bold py-2 px-3 lg:py-2 lg:px-4 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap">Candidati Ora</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-32 text-center text-white min-h-screen flex items-center justify-center">
+            <div class="container mx-auto px-6 hero-content">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 whitespace-nowrap text-[#FFFBF5]">Diventa una Partner Positive</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-300">Unisciti alla nostra missione. Ispira altre donne a trasformare corpo e mente attraverso il potere del movimento e di una mentalità positiva.</p>
+                <a href="#candidatura" class="bg-accent text-dark font-bold py-3 px-8 rounded-full text-lg hover:opacity-90 transition-opacity transform hover:scale-105">Invia la Tua Candidatura</a>
+            </div>
+        </section>
+
+        <div class="bg-white text-dark rounded-t-3xl shadow-2xl relative z-10 p-8 md:p-12 -mt-16">
+            <div class="container mx-auto">
+                <section id="programma" class="py-16 md:py-24">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2">Il Programma di Affiliazione</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Crediamo nell'autenticità. Cerchiamo donne vere che vogliono condividere la loro passione, non un numero di follower.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-xl font-bold mb-3">Chi è Anna</h3>
+                            <p class="text-gray-600">Personal Trainer e Coach olistica, ideatrice di Positive Coaching App. La sua missione è aiutare le donne a trasformare corpo e mentalità con un approccio basato su equilibrio e benessere.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-xl font-bold mb-3">La Positive Coaching App</h3>
+                            <p class="text-gray-600">Uno strumento completo per fitness, nutrizione e mindset. Offre programmi personalizzati e una community motivante dove ogni donna è protagonista del proprio cambiamento.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg md:col-span-2 lg:col-span-1">
+                            <h3 class="text-xl font-bold mb-3">La Nostra Missione</h3>
+                            <p class="text-gray-600">Non cerchiamo influencer. Cerchiamo donne autentiche, appassionate di fitness, che vogliono ispirare altre donne condividendo un percorso di crescita reale e costante.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="vantaggi" class="py-16 md:py-24">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2">I Vantaggi Esclusivi per Te</h2>
+                        <p class="text-lg text-gray-600">Entrare nel nostro team significa crescere insieme. Ecco cosa ti offriamo.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-accent transition-transform duration-300 benefit-card">
+                            <div class="text-4xl mb-4 text-accent"><i class="fas fa-sack-dollar"></i></div>
+                            <h3 class="text-xl font-bold mb-2">20% di Commissione</h3>
+                            <p class="text-gray-600">Guadagna una commissione del 20% su ogni nuova iscrizione all'app generata con il tuo codice affiliato.</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-accent transition-transform duration-300 benefit-card">
+                            <div class="text-4xl mb-4 text-accent"><i class="fas fa-tag"></i></div>
+                            <h3 class="text-xl font-bold mb-2">20% Sconto per Te</h3>
+                            <p class="text-gray-600">Ricevi uno sconto del 20% sul tuo abbonamento personale alla Positive Coaching App.</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-accent transition-transform duration-300 benefit-card">
+                            <div class="text-4xl mb-4 text-accent"><i class="fas fa-headset"></i></div>
+                            <h3 class="text-xl font-bold mb-2">Check-in Mensile con Anna</h3>
+                            <p class="text-gray-600">Un check-in gratuito ogni mese con raccomandazioni personalizzate su allenamento e alimentazione.</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-accent transition-transform duration-300 benefit-card">
+                            <div class="text-4xl mb-4 text-accent"><i class="fas fa-star"></i></div>
+                            <h3 class="text-xl font-bold mb-2">Diventa Protagonista</h3>
+                            <p class="text-gray-600">Sii il volto della nostra Community, con la possibilità di essere messa in evidenza sui nostri canali social.</p>
+                        </div>
+                    </div>
+                </section>
+        
+                <section id="requisiti" class="py-16 md:py-24">
+                     <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="text-center md:text-left">
+                             <h2 class="text-3xl md:text-4xl font-bold mb-4">Cosa Ti Chiediamo</h2>
+                             <p class="text-lg text-gray-600 mb-6">La nostra collaborazione si basa sulla passione e sulla fiducia. L'impegno richiesto è pensato per essere autentico e integrato nel tuo stile di vita.</p>
+                        </div>
+                         <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-accent text-dark rounded-full h-8 w-8 flex-shrink-0 flex items-center justify-center font-bold mr-4 mt-1">✓</div>
+                                    <div>
+                                        <h4 class="font-semibold">Condivisione Autentica</h4>
+                                        <p class="text-gray-600">Pubblica 1 o 2 storie a settimana, mostrando il tuo vero percorso di fitness e benessere.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-accent text-dark rounded-full h-8 w-8 flex-shrink-0 flex items-center justify-center font-bold mr-4 mt-1">✓</div>
+                                    <div>
+                                        <h4 class="font-semibold">Supporto alla Community</h4>
+                                        <p class="text-gray-600">Segui e interagisci con le pagine Instagram @positivecoachinganna e @thepositivecoachingapp.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-accent text-dark rounded-full h-8 w-8 flex-shrink-0 flex items-center justify-center font-bold mr-4 mt-1">✓</div>
+                                    <div>
+                                        <h4 class="font-semibold">Passione e Costanza</h4>
+                                        <p class="text-gray-600">Sii un esempio di autenticità, condividendo la tua passione per il movimento e la mentalità positiva.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+        
+                <section id="idee" class="py-16 md:py-24">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2">Idee per i Tuoi Contenuti</h2>
+                        <p class="text-lg text-gray-600">Non sai da dove iniziare? Ti diamo noi qualche spunto per creare contenuti di valore.</p>
+                    </div>
+                    <div class="flex justify-center flex-wrap gap-2 mb-8">
+                        <button class="idea-btn active py-2 px-4 rounded-full border-2 border-dark transition-colors duration-300" data-idea="idea-1">Il Tuo Percorso</button>
+                        <button class="idea-btn py-2 px-4 rounded-full border-2 border-dark transition-colors duration-300" data-idea="idea-2">Prima e Dopo</button>
+                        <button class="idea-btn py-2 px-4 rounded-full border-2 border-dark transition-colors duration-300" data-idea="idea-3">Q&A con la Community</button>
+                        <button class="idea-btn py-2 px-4 rounded-full border-2 border-dark transition-colors duration-300" data-idea="idea-4">Ricette Fit</button>
+                    </div>
+                    <div id="idea-content" class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-xl shadow-lg min-h-[200px]">
+                        <div class="idea-pane" id="idea-1">
+                            <h3 class="text-xl font-bold mb-3">Storie del Tuo Percorso</h3>
+                            <p class="text-gray-600">Mostra i tuoi allenamenti, i momenti di difficoltà e le vittorie. L'autenticità crea connessione. Racconta perché hai iniziato, quali sono i tuoi obiettivi e come l'app ti sta aiutando a raggiungerli. La tua storia è unica e può ispirare tantissime persone.</p>
+                        </div>
+                        <div class="idea-pane hidden" id="idea-2">
+                            <h3 class="text-xl font-bold mb-3">La Trasformazione (non solo fisica)</h3>
+                            <p class="text-gray-600">Condividi i tuoi progressi. Non solo foto del "prima e dopo", ma racconta come è cambiata la tua energia, la tua forza e la tua mentalità. Spiega come un approccio positivo al fitness ha migliorato la tua vita quotidiana, al di là dell'aspetto fisico.</p>
+                        </div>
+                        <div class="idea-pane hidden" id="idea-3">
+                            <h3 class="text-xl font-bold mb-3">Q&A con la Tua Community</h3>
+                            <p class="text-gray-600">Interagisci con i tuoi follower. Chiedi quali sono i loro dubbi sul fitness o sull'alimentazione e rispondi basandoti sulla tua esperienza. Questo ti posiziona come una figura di riferimento e costruisce fiducia. Puoi usare le Storie di Instagram per farlo in modo interattivo.</p>
+                        </div>
+                        <div class="idea-pane hidden" id="idea-4">
+                            <h3 class="text-xl font-bold mb-3">Le Tue Ricette Fit Preferite</h3>
+                            <p class="text-gray-600">Cosa mangi prima o dopo l'allenamento? Condividi una ricetta semplice e sana che ami. Può essere un frullato proteico, uno spuntino energetico o un pasto completo. Mostrare come integri una sana alimentazione nella tua routine è di grande ispirazione.</p>
+                        </div>
+                    </div>
+                </section>
+        
+                <section id="candidatura" class="py-16 md:py-24">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronta a Iniziare?</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Il tuo percorso può diventare un'ispirazione per migliaia di donne. Unisciti a noi e trasformiamo insieme la passione in un messaggio potente.</p>
+                        <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold mb-6">Come Funziona</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                                <div class="flex flex-col items-center text-center">
+                                    <div class="bg-accent text-dark rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold mb-3">1</div>
+                                    <h4 class="font-semibold mb-1">Invia la candidatura</h4>
+                                    <p class="text-sm text-gray-500">Compila il form per farci conoscere la tua storia e la tua passione.</p>
+                                </div>
+                                <div class="flex flex-col items-center text-center">
+                                     <div class="bg-accent text-dark rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold mb-3">2</div>
+                                    <h4 class="font-semibold mb-1">Ricevi il codice</h4>
+                                    <p class="text-sm text-gray-500">Se verrai selezionata, riceverai il tuo codice affiliato e i materiali social.</p>
+                                </div>
+                                <div class="flex flex-col items-center text-center">
+                                     <div class="bg-accent text-dark rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold mb-3">3</div>
+                                    <h4 class="font-semibold mb-1">Condividi la passione</h4>
+                                    <p class="text-sm text-gray-500">Inizia a condividere la tua esperienza in modo autentico e costante.</p>
+                                </div>
+                                <div class="flex flex-col items-center text-center">
+                                     <div class="bg-accent text-dark rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold mb-3">4</div>
+                                    <h4 class="font-semibold mb-1">Ispira e guadagna</h4>
+                                    <p class="text-sm text-gray-500">Trasforma la tua passione in ispirazione per le altre e in un'opportunità di guadagno.</p>
+                                </div>
+                            </div>
+                        </div>
+                         <a href="mailto:info@positivecoaching.com?subject=Candidatura Programma Affiliazione" class="mt-10 inline-block bg-dark text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-opacity transform hover:scale-105">Invia la tua candidatura via Email</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contatti" class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-2 text-white">Positive Coaching</h3>
+            <p class="mb-6">Per qualsiasi domanda, non esitare a contattarci.</p>
+            <div class="flex justify-center items-center space-x-6 mb-6">
+                <a href="mailto:info@positivecoaching.com" class="hover:text-accent transition-colors"><i class="fas fa-envelope"></i> info@positivecoaching.com</a>
+                <span class="text-gray-500">|</span>
+                <a href="https://www.instagram.com/positivecoachinganna" target="_blank" class="hover:text-accent transition-colors"><i class="fab fa-instagram"></i> @positivecoachinganna</a>
+                 <span class="text-gray-500">|</span>
+                <a href="https://www.instagram.com/thepositivecoachingapp" target="_blank" class="hover:text-accent transition-colors"><i class="fab fa-instagram"></i> @thepositivecoachingapp</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Positive Coaching. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function changeNavOnScroll() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', changeNavOnScroll);
+            
+            const ideaBtns = document.querySelectorAll('.idea-btn');
+            const ideaPanes = document.querySelectorAll('.idea-pane');
+
+            ideaBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const ideaToShow = btn.getAttribute('data-idea');
+
+                    ideaBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    ideaPanes.forEach(pane => {
+                        if (pane.id === ideaToShow) {
+                            pane.classList.remove('hidden');
+                        } else {
+                            pane.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
