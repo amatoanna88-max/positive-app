@@ -46,7 +46,7 @@ export function dueDateFor(priority: Priority, created: string): { due: string; 
 		case "P1 today":
 			return { due: created, rule: "P1: due the day it arrived" }
 		case "P2 this week":
-			return { due: fridayOf(created), rule: "P2: due the Friday of the week it arrived" }
+			return { due: fridayOf(created), rule: "P2: due the Friday of the week it arrived (next Friday if it arrived on a weekend)" }
 		case "P3 later":
 			return { due: addWorkingDays(created, 20), rule: "P3: due 20 working days after it arrived" }
 	}
