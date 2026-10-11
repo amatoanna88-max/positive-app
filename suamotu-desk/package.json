@@ -1,11 +1,12 @@
 {
-  "name": "my-worker",
+  "name": "suamotu-desk",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
   },
   "engines": {
     "node": ">=22.0.0",
